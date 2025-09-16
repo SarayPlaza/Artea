@@ -1,0 +1,66 @@
+[
+  {
+    "nombre": "Cuadro Abstracto",
+    "categoria": "oleo y acuarelas",
+    "imagen": "../images/cuadro1.png",
+    "imagen_hover": "../images/cuadro1_hover.png",
+    "descripcion": "Una pieza que explora la armonía cromática y las formas fluidas, invitando a la libre interpretación."
+  },
+  {
+    "nombre": "Naturaleza en Tinta",
+    "categoria": "ilustraciones",
+    "imagen": "../images/ilustracion1.png",
+    "imagen_hover": "../images/ilustracion1_hover.png",
+    "descripcion": "Ilustración digital que captura la esencia del bosque con una paleta verde, con detalles minuciosos."
+  },
+  {
+    "nombre": "Mural del Océano",
+    "categoria": "murales",
+    "imagen": "../images/mural1.png",
+    "imagen_hover": "../images/mural1_hover.png",
+    "descripcion": "Un imponente mural que realizado con sogas imitando al fluir del viento y a la brisa marina."
+  },
+  {
+    "nombre": "Paisaje Natural",
+    "categoria": "oleo y acuarelas",
+    "imagen": "../images/cuadro2.png",
+    "imagen_hover": "../images/cuadro2_hover.png",
+    "descripcion": "Óleo sobre lienzo que nos transmite a la propia naturaleza, con una atmósfera serena y etérea."
+  },
+  {
+    "nombre": "Retrato Urbano",
+    "categoria": "ilustraciones",
+    "imagen": "../images/ilustracion2.png",
+    "imagen_hover": "../images/ilustracion2_hover.png",
+    "descripcion": "Ilustración digital de un rostro que refleja la vida y la energía de la ciudad."
+  },
+  {
+    "nombre": "Fuego y Color",
+    "categoria": "murales",
+    "imagen": "../images/mural2.png",
+    "imagen_hover": "../images/mural2_hover.png",
+    "descripcion": "Un mural dinámico realizado en madera y lleno de energía, una explosión de color."
+  },
+    {
+    "nombre": "Flores del Camino",
+    "categoria": "oleo y acuarelas",
+    "imagen": "../images/cuadro3.png",
+    "imagen_hover": "../images/cuadro3_hover.png",
+    "descripcion": "Cuadro realizado con acuarelas en tonos pastel que trasnmite calma y frescura."
+  },
+  {
+    "nombre": "Sol Rojo",
+    "categoria": "ilustraciones",
+    "imagen": "../images/ilustracion3.png",
+    "imagen_hover": "../images/ilustracion3_hover.png",
+    "descripcion": "Ilustración digital al mas puro estilo japandi de un amanecer con colores calidos y vibrantes."
+  },
+  {
+    "nombre": "Piedra Lisa",
+    "categoria": "murales",
+    "imagen": "../images/mural3.png",
+    "imagen_hover": "../images/mural3_hover.png",
+    "descripcion": "Un mural realizado con varias rocas ígneas y metamorfas, pulidas y elegantes."
+  }
+  
+]

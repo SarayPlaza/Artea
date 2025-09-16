@@ -1,0 +1,924 @@
+/*menu*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 90px; 
+    width: auto;
+    position: fixed; /* fijar header */
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; /* para que se quede por encima de todo */
+    padding: 0 80px;
+}
+
+.logo img {
+    display: flex;
+    height: 90px; 
+    width: auto; 
+}
+
+nav {
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 50px;
+    margin-left: 20px;
+}
+
+nav a {
+    color: rgb(0, 0, 0); /* Color por defecto de los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: rgb(104, 104, 104); /* Color al pasar el ratón */
+    border-bottom: 2px solid rgb(104, 104, 104);
+}
+
+nav ul li a.active {
+    color: rgb(0, 0, 0); /* Color para el enlace activo */
+    border-bottom: 2px solid rgb(29, 29, 29);
+}
+
+/* Carrusel de imágenes */
+
+.carrusel-galeria {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; /* Para que el carrusel no quede debajo del header fijo */
+}
+
+.carrusel-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Nosotros */
+
+main {
+    background-color: #dbdada; 
+}
+
+#sobre-nosotros {
+    text-align: center; 
+    padding: 50px 20px; 
+}
+
+#sobre-nosotros h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 10px; 
+}
+
+#sobre-nosotros h2 {
+    font-size: 1.5rem; 
+    font-weight: normal; /* Elimina la negrita */
+    margin-bottom: 30px; 
+}
+
+#sobre-nosotros p {
+    text-align: justify; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    line-height: 1.6; 
+}
+
+/* Conócenos */
+
+#conocenos {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#conocenos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.artistas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.artista-card {
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Contenedor de las imágenes del hover */
+
+.imagen-hover-container {
+    position: relative; /* posicionar las imágenes una encima de otra */
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; /* para que nada se salga del contenedor */
+    border-radius: 8px; 
+    margin-bottom: 10px;
+}
+
+.imagen-hover-container img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformar */
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición */
+}
+
+.imagen-hover-container .imagen-principal {
+    opacity: 1; /* La imagen principal es visible por defecto */
+}
+
+.imagen-hover-container .imagen-hover {
+    opacity: 0; /* La imagen de hover está oculta por defecto */
+}
+
+/* Efecto al pasar el ratón */
+
+.imagen-hover-container:hover .imagen-principal {
+    opacity: 0; /* Oculta la imagen principal al pasar el ratón */
+}
+
+.imagen-hover-container:hover .imagen-hover {
+    opacity: 1; /* Muestra la imagen de hover al pasar el ratón */
+}
+
+
+.artista-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.artista-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Novedades */
+
+#novedades {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8; 
+}
+
+#novedades h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.novedades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columnas adaptables */
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 40px; 
+}
+
+.novedad-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.novedad-card:hover {
+    transform: translateY(-5px);
+}
+
+.imagen-novedad-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0; 
+}
+
+.imagen-novedad-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.imagen-novedad-container .imagen-principal {
+    opacity: 1; /* Por defecto, la imagen principal es visible. */
+}
+
+.imagen-novedad-container .imagen-hover {
+    opacity: 0; /* Por defecto, la imagen de hover está oculta. */
+}
+
+.imagen-novedad-container:hover .imagen-principal {
+    opacity: 0; /* Al pasar el ratón, la imagen principal se oculta. */
+}
+
+.imagen-novedad-container:hover .imagen-hover {
+    opacity: 1; /* Al pasar el ratón, la imagen de hover se hace visible. */
+}
+
+.novedad-card h3 {
+    margin: 15px 0 5px;
+}
+
+.novedad-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+.ver-mas-galeria {
+    text-align: center;
+}
+
+.btn-galeria {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: rgb(75, 75, 75); 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-galeria:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+/* Noticias */
+
+#noticias {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#noticias h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.noticias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px; 
+    justify-content: center;
+}
+
+.noticia-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen no se salga del borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+}
+
+.noticia-card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.noticia-contenido {
+    padding: 20px;
+}
+
+.noticia-contenido h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.noticia-contenido .fecha {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.noticia-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Pie de página*/
+
+footer {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+}
+
+/* Contenedor el footer */
+
+.social-media,
+.info-legal {
+    display: flex;
+    flex-direction: column; 
+    text-align: left; 
+    flex: 1; 
+    min-width: 280px; 
+    margin: 10px; 
+}
+
+.social-media h3,
+.info-legal h3 {
+    text-align: center; 
+}
+
+
+.social-media img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.ac {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    justify-content: center; 
+}
+
+.andress{
+    margin-bottom: 0px;
+    text-align: center; 
+}
+
+.andressp{
+    margin-top: 5px;
+    text-align: center; 
+}
+
+.social-media a:hover {
+    color: rgb(104, 104, 104);
+}
+
+.social-media a:hover span {
+    border-bottom: 2px solid rgb(104, 104, 104);
+}
+
+.avl,
+.pp {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    text-align: center; 
+}
+
+.avl:hover,
+.pp:hover {
+    color: rgb(104, 104, 104); 
+    text-decoration: underline; 
+    text-decoration-color: rgb(104, 104, 104);  
+}
+
+.avl {
+    margin-top: 25px;
+}
+
+.pp{
+    margin-top: 5px;
+}
+
+
+
+/* Galería */
+
+.galeria-container {
+    display: flex;
+    padding: 80px 20px 20px 20px;
+}
+
+.filtro-menu {
+    width: 250px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ccc;
+}
+
+.filtro-menu h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filtro-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filtro-menu li {
+    margin-bottom: 10px;
+}
+
+.filtro-menu button {
+    width: 100%;
+    padding: 10px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.filtro-menu button:hover {
+    background-color: #ddd;
+}
+
+.filtro-menu button.active {
+    background-color: #bbb;
+    color: #fff;
+    font-weight: bold;
+}
+
+.galeria-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.galeria-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.galeria-card:hover {
+    transform: translateY(-5px);
+}
+
+.galeria-card h3 {
+    margin: 15px 0 5px;
+}
+
+.galeria-card p {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+
+/*Hover Galería */
+
+.galeria-card {
+    position: relative;
+}
+
+.imagen-hover-container {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+.imagen-hover-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.imagen-principal {
+    opacity: 1; /* La imagen principal es visible por defecto */
+}
+
+.imagen-hover {
+    opacity: 0; /* La imagen de hover está oculta por defecto */
+}
+
+.imagen-hover-container:hover .imagen-principal {
+    opacity: 0; /* Oculta la imagen principal al pasar el ratón */
+}
+
+.imagen-hover-container:hover .imagen-hover {
+    opacity: 1; /* Muestra la imagen de hover al pasar el ratón */
+}
+
+/*PRESUPUESTO*/
+
+.presupuesto-section {
+    padding: 20px 20px 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.presupuesto-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.presupuesto-section > p { 
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+#presupuestoForm {
+    text-align: left;
+}
+
+.form-part h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-top: 40px;
+}
+
+.form-part:first-of-type h2 {
+    margin-top: 0; 
+}
+
+/* Cajas de agrupamiento */
+.form-group-box {
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px; 
+    background-color: #fcfcfc; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); 
+}
+
+/* Ajusta los form-group individuales cuando están dentro de la caja */
+.form-group-box .form-group {
+    padding: 10px 0; 
+    border: none; 
+    background-color: transparent; 
+    box-shadow: none; 
+    margin-bottom: 15px; 
+}
+
+.form-group-box .form-group:last-child {
+    margin-bottom: 0; 
+}
+
+.form-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #777;
+    outline: none;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.extras-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.extras-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.extras-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.presupuesto-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#totalPresupuesto { 
+    color: #034d9d; 
+}
+
+.condiciones-envio {
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
+    text-align: center;
+}
+
+.condiciones-envio label {
+    font-size: 1rem;
+    font-weight: normal;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 20px; 
+    cursor: pointer; 
+    text-align: left; 
+}
+
+.condiciones-envio label input[type="checkbox"] {
+    width: auto; 
+    margin-right: 8px; 
+    margin-bottom: 0; 
+    position: relative; 
+    top: -1px; 
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buttons-container button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* efecto botones presupuesto */
+#enviarPresupuesto {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#enviarPresupuesto:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#enviarPresupuesto:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#resetFormulario {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#resetFormulario:hover {
+    background-color: #c82333;
+}
+
+/* mensajes de error */
+.error-message {
+    color: #dc3545; 
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none; /* Oculto por defecto, se muestra con JS */
+    text-align: left; 
+}
+
+/* Estilo para los campos inválidos */
+input.invalid, select.invalid {
+    border-color: #dc3545;
+    background-color: #ffe0e0;
+}
+
+/* Contacto */
+
+.contacto {
+    padding: 20px 20px 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title-conth1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.title-conth3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.direccion {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* mapa */
+#mapa {
+    height: 300px;
+    width: 60%; 
+    margin: 0 auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Aviso legal y politica de privacidad*/
+
+.legal-notice {
+    max-width: 900px; 
+    margin: 0px auto; 
+    padding: 60px 140px 150px 140px;;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6; 
+    color: #333; 
+    font-family: 'Roboto', sans-serif; 
+}
+
+.legal-notice h1 {
+    font-size: 2.5em;
+    color: #2c3e50; 
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.legal-notice h2 {
+    font-size: 1.8em;
+    color: #34495e; 
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.legal-notice p {
+    margin-bottom: 15px;
+    text-align: justify; 
+}
+
+.legal-notice ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.legal-notice ol li {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.legal-notice p:last-of-type {
+    font-size: 0.9em;
+    color: #777;
+    text-align: right;
+    margin-top: 30px;
+}
+
+/* Estilos  nuevo en pie de página */
+.clase-footer-diferenciado {
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1); 
+    border-top: 1px solid #e0e0e0; 
+}
+
+
+
+
+
+

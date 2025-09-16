@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Flores del Camino",
+    "categoria": "oleo y acuarelas",
+    "imagen": "images/cuadro3.png",
+    "imagen_hover": "images/cuadro3_hover.png",
+    "descripcion": "Cuadro realizado con acuarelas en tonos pastel que trasnmite calma y frescura."
+  },
+  {
+    "nombre": "Sol Rojo",
+    "categoria": "ilustraciones",
+    "imagen": "images/ilustracion3.png",
+    "imagen_hover": "images/ilustracion3_hover.png",
+    "descripcion": "Ilustración digital al mas puro estilo japandi de un amanecer con colores calidos y vibrantes."
+  },
+  {
+    "nombre": "Piedra Lisa",
+    "categoria": "murales",
+    "imagen": "images/mural3.png",
+    "imagen_hover": "images/mural3_hover.png",
+    "descripcion": "Un mural realizado con varias rocas ígneas y metamorfas, pulidas y elegantes."
+  }
+]

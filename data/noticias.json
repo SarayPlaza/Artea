@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Artea, un nuevo concepto en galerías de arte",
+    "fecha": "04 de Septiembre de 2025",
+    "descripcion": "Inauguramos nuestra galería online con una visión única: fusionar el arte tradicional y el digital para una audiencia global. Nuestro objetivo es ser un puente entre la creatividad y la innovación.",
+    "imagen": "images/noticia1.png"
+  },
+  {
+    "titulo": "Entrevista exclusiva con la artista Sherezade",
+    "fecha": "15 de Agosto de 2025",
+    "descripcion": "Conversamos con nuestra artista de óleo y acrílico, Sherezade, sobre su proceso creativo, sus inspiraciones y cómo transforma sueños en lienzos llenos de vida y color. ¡No te lo pierdas!",
+    "imagen": "images/noticia2.png"
+  },
+  {
+    "titulo": "Explorando la naturaleza a través del arte de Aabraham",
+    "fecha": "20 de Agosto de 2025",
+    "descripcion": "Descubre cómo Aabraham utiliza elementos naturales como madera, piedras y hojas para crear obras que celebran la belleza efímera del mundo natural. Su arte es un testimonio de la conexión humana con el entorno.",
+    "imagen": "images/noticia3.png"
+  }
+]

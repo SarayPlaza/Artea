@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - Artea</title>
+    <link rel="icon" href="../images/Logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/encabezado1.png" alt="Artea">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="galeria.html">GALERIA</a></li>
+                <li><a href="presupuesto.html" class="active">PRESUPUESTO</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="presupuesto-section">
+            <h1>Calcula tu Presupuesto</h1>
+            <p>Elige las opciones para tu proyecto y obtén un presupuesto estimado al instante. ¡Sin compromiso!</p>
+
+            <form id="presupuestoForm" novalidate>
+                <div class="form-part" id="datosContacto">
+                    <h2>Tus Datos de Contacto</h2>
+                    <div class="form-group-box"> <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" maxlength="15" required>
+                            <p class="error-message" id="errorNombre"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" name="apellidos" maxlength="40" required>
+                            <p class="error-message" id="errorApellidos"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono de Contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" maxlength="9" required>
+                            <p class="error-message" id="errorTelefono"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                            <p class="error-message" id="errorEmail"></p>
+                        </div>
+                    </div> </div>
+
+                <div class="form-part" id="opcionesPresupuesto">
+                    <h2>Opciones de Presupuesto</h2>
+                    <div class="form-group-box"> <div class="form-group">
+                            <label for="producto">Producto (Obra de la Galería):</label>
+                            <select id="producto" name="producto" required>
+                                <option value="">-- Selecciona una obra --</option>
+                                </select>
+                            <p class="error-message" id="errorProducto"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="plazo">Plazo de Entrega (días):</label>
+                            <input type="number" id="plazo" name="plazo" min="7" value="30" required>
+                            <p class="small-text">Mínimo 7 días. Más rápido, mayor coste. Más lento, descuento.</p>
+                            <p class="error-message" id="errorPlazo"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Extras (opcional):</label>
+                            <div class="extras-group">
+                                <label>
+                                    <input type="checkbox" name="extra" value="marco"> Marco Premium (+50€)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="extra" value="envio_urgente"> Envío Urgente (+30€)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="extra" value="certificado"> Certificado de Autenticidad (+20€)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="extra" value="sesion_bocetos"> Sesión de Bocetos Digitales (+40€)
+                                </label>
+                            </div>
+                        </div>
+                    </div> </div>
+
+                <div class="form-group presupuesto-final">
+                    <span>Presupuesto Total:</span>
+                    <span id="totalPresupuesto">0.00€</span>
+                </div>
+
+                <div class="form-group condiciones-envio">
+                    <label for="aceptoCondiciones">
+                        <input type="checkbox" id="aceptoCondiciones" required>
+                        Acepto la&nbsp;<a href="politica-privacidad.html">política de privacidad</a>
+                    </label>
+                    <p class="error-message" id="errorCondiciones"></p>
+                    <div class="buttons-container">
+                        <button type="submit" id="enviarPresupuesto" disabled>Enviar Presupuesto</button>
+                        <button type="reset" id="resetFormulario">Resetear Formulario</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+
+    <div class="social-media">
+        <h3>Mantente al día en nuestras redes:</h3>
+        <a class="ac" href="https://facebook.com" target="_blank">
+            <img src="../images/facebook.png" alt="Facebook"> <span>Facebook</span>
+        </a>
+        <a class="ac" href="https://instagram.com" target="_blank">
+            <img src="../images/instagram.PNG" alt="Instagram"> <span>Instagram</span>
+        </a>
+        <a class="ac" href="https://x.com" target="_blank">
+            <img src="../images/x.png" alt="X/Twitter"> <span>X/Twitter</span>
+        </a>
+    </div>
+    <div class="info-legal">
+        <h3 class="andress">Dirección:</h3>
+        <p class="andressp"> Calle del Barquillo 3, Centro, 28004 Madrid.</p>
+        <a class="avl" href="aviso-legal.html">Aviso Legal</a>
+        <a class="pp" href="politica-privacidad.html">Política de Privacidad</a>
+    </div>
+    </footer>
+
+    <script src="../js/presupuesto.js"></script>
+</body>
+</html>
